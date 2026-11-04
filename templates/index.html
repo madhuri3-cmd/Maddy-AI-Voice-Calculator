@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maddy AI - Voice Calculator</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="main-container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <h1>✨ Maddy AI</h1>
+            <p>Your Smart AI Voice Calculator</p>
+            <span>POWERED BY PYTHON + FLASK</span>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="app-layout">
+
+            <!-- LEFT SIDE: AI ROBOT -->
+            <section class="assistant-section">
+
+                <div class="greeting">
+                    Hello! I am <strong>Maddy.</strong>
+                    <br>
+                    Ready to calculate! 😊
+                </div>
+
+                <div class="robot">
+                    <div class="robot-antenna"></div>
+
+                    <div class="robot-head">
+                        <div class="robot-eye"></div>
+                        <div class="robot-eye"></div>
+                        <div class="robot-smile"></div>
+                    </div>
+
+                    <div class="robot-body">
+                        <span>🎙️</span>
+                    </div>
+                </div>
+
+                <p id="status">I'm ready! Ask me anything.</p>
+
+                <div class="voice-section">
+                    <button id="mic-button"
+                            class="mic-button"
+                            onclick="startVoice()">
+                        🎤 Tap to Speak
+                    </button>
+                    <p>Speak your calculation</p>
+                </div>
+
+            </section>
+
+            <!-- RIGHT SIDE: CALCULATOR -->
+            <section class="calculator">
+
+                <div class="display-box">
+                    <span id="previous-operation"></span>
+
+                    <input type="text"
+                           id="display"
+                           value="0"
+                           readonly>
+                </div>
+
+                <div class="buttons">
+
+                    <button class="special" onclick="clearDisplay()">AC</button>
+                    <button class="special" onclick="deleteLast()">DEL</button>
+                    <button class="special" onclick="addValue('%')">%</button>
+                    <button class="operator" onclick="addValue('/')">÷</button>
+
+                    <button onclick="addValue('7')">7</button>
+                    <button onclick="addValue('8')">8</button>
+                    <button onclick="addValue('9')">9</button>
+                    <button class="operator" onclick="addValue('*')">×</button>
+
+                    <button onclick="addValue('4')">4</button>
+                    <button onclick="addValue('5')">5</button>
+                    <button onclick="addValue('6')">6</button>
+                    <button class="operator" onclick="addValue('-')">−</button>
+
+                    <button onclick="addValue('1')">1</button>
+                    <button onclick="addValue('2')">2</button>
+                    <button onclick="addValue('3')">3</button>
+                    <button class="operator" onclick="addValue('+')">+</button>
+
+                    <button class="zero" onclick="addValue('0')">0</button>
+                    <button onclick="addValue('.')">.</button>
+                    <button class="equal" onclick="calculate()">=</button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <span>⚡ Fast Calculation</span>
+            <span>🎙️ Voice Input</span>
+            <span>🧠 AI Powered</span>
+            <span>💜 Smart & Easy</span>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
