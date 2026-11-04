@@ -94,7 +94,7 @@ http://127.0.0.1:5000/
 
 ## 📸 Screenshots
 
-Screenshots of the application will be added here.
+![Maddy AI Voice Calculator](maddy-ai-screenshot.png)
 
 ## 👩‍💻 Developer
 
